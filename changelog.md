@@ -1,1 +1,2 @@
 - added Russian translation (thanks to @Kisuny)
+- fixed compatibility crash when merging accessories (reported by @𝙿𝙰𝚇𝚇, @memphismc)

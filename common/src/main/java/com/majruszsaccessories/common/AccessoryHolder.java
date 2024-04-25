@@ -178,7 +178,7 @@ public class AccessoryHolder {
 	}
 
 	public float getExtraBonus() {
-		return this.data.extraBonus;
+		return this.data.extraBonus != null ? this.data.extraBonus : 0.0f;
 	}
 
 	public Range< Float > getBonusRange() {

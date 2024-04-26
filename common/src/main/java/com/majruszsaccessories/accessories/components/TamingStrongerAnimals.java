@@ -61,7 +61,7 @@ public class TamingStrongerAnimals extends BonusComponent< AccessoryItem > {
 	}
 
 	private void applyBonuses( OnBabySpawned data ) {
-		this.applyBonuses( ( float )Math.max( this.getModifierValue( data.parentA ), this.getModifierValue( data.parentB ) ), data.child );
+		this.applyBonuses( ( float )Math.max( this.getModifierValueSafe( data.parentA ), this.getModifierValueSafe( data.parentB ) ), data.child );
 	}
 
 	private void applyBonuses( float bonus, LivingEntity entity ) {
@@ -81,6 +81,10 @@ public class TamingStrongerAnimals extends BonusComponent< AccessoryItem > {
 			.count( 4 )
 			.sizeBased( data.animal )
 			.emit( data.getServerLevel() );
+	}
+
+	private double getModifierValueSafe( LivingEntity entity ) {
+		return this.hasModifier( entity ) ? this.getModifierValue( entity ) : 0.0;
 	}
 
 	private double getModifierValue( LivingEntity entity ) {
